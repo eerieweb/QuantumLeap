@@ -1,0 +1,8 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -I.
+
+DEPS = shell.h parser.h commands.h
+OBJ = main.o shell.o parser.o commands.o
+
+%.o: %.c $(DEPS)
+    $(CC) -c -o $@ $< $(CFLAGS)
